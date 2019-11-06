@@ -7,6 +7,5 @@ import (
 )
 
 func main() {
-	fmt.Println(" ===> ", cons.Exc001())
-	fmt.Println(" ===> ", cons.Exc002())
+	fmt.Println(" ===> ", cons.Exc006())
 }
