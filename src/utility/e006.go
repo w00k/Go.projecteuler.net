@@ -12,7 +12,7 @@ func squares(number int) int {
 }
 
 /*
-addValues : retorna la suma de 1 a 101
+addValues : retorna la suma de 1 a 100
 param     : nil
 return    : value int
 */
@@ -25,7 +25,9 @@ func addValues() int {
 }
 
 /*
-
+addValuesSquares : obtiene la suma de los cuadrados de 1 al 100
+param            : nil
+return           : value int
 */
 func addValuesSquares() int {
 	value := 0
@@ -34,8 +36,11 @@ func addValuesSquares() int {
 	}
 	return value
 }
+
 /*
-Exc006 :
+Exc006 : obtiene la diferencia entre la suma al cuadrado del 1 al 100 a la suma de los cuadrados de 1 al 100
+param  : nil
+return : retorna la diferencia entre la suma al cuadrado del 1 al 100 a la suma de los cuadrados de 1 al 100 
 */
 func Exc006() int {
 	addValue := squares(addValues())
