@@ -1,48 +1,52 @@
 package cons
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
 /*
-Exc006NaturalNumbers : return the sum for 1 to 100 and square
-param				 : any
-return 				 : int64
+squares : retirno el valor de un número al cuadrado
+param   : número base
+return  : number int
 */
-func Exc006NaturalNumbers() int64 {
-	value := 100
-	var sum int64 = 0
-	for i := 0; i <= value; i++ {
-		sum = sum + int64(i)
-	}
-	return sum * sum
+func squares(number int) int {
+	return number * number
 }
 
 /*
-Exc006NaturalNumbersSquare : return the sum of the square from 1 to 100
-param				 : any
-return 				 : int64
+addValues : retorna la suma de 1 a 100
+param     : nil
+return    : value int
 */
-func Exc006NaturalNumbersSquare() int64 {
-	value := 100
-	var sum int64 = 0
-	for i := 0; i <= value; i++ {
-		sum = sum + int64(i*i)
+func addValues() int {
+	value := 0
+	for index := 1; index < 101; index++ {
+		value = value + index
 	}
-	return sum
+	return value
 }
 
 /*
-Exc006 : Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
-param  : any
-return : string
+addValuesSquares : obtiene la suma de los cuadrados de 1 al 100
+param            : nil
+return           : value int
 */
-func Exc006() string {
-	naturalNumbers := Exc006NaturalNumbers()
-	naturalNumbersSquare := Exc006NaturalNumbersSquare()
+func addValuesSquares() int {
+	value := 0
+	for index := 1; index < 101; index++ {
+		value = value + squares(index)
+	}
+	return value
+}
 
-	fmt.Println("Exc006NaturalNumbers : " + strconv.FormatInt(naturalNumbers, 10))
-	fmt.Println("Exc006NaturalNumbersSquare : " + strconv.FormatInt(naturalNumbersSquare, 10))
-	return strconv.FormatInt(naturalNumbers-naturalNumbersSquare, 10)
+/*
+Exc006 : obtiene la diferencia entre la suma al cuadrado del 1 al 100 a la suma de los cuadrados de 1 al 100
+param  : nil
+return : retorna la diferencia entre la suma al cuadrado del 1 al 100 a la suma de los cuadrados de 1 al 100
+*/
+func Exc006() int {
+	addValue := squares(addValues())
+	addSquaresValue := addValuesSquares()
+	fmt.Println("values 1 + 2 + 3 + ... + 101", addValue )
+	fmt.Println("return addValue : ", addValue)
+	fmt.Println("return addSquaresValue : ", addSquaresValue)
+	return addValue - addSquaresValue
 }
