@@ -1,4 +1,4 @@
-package cons
+package utility
 
 import "fmt"
 
@@ -45,7 +45,7 @@ return : retorna la diferencia entre la suma al cuadrado del 1 al 100 a la suma 
 func Exc006() int {
 	addValue := squares(addValues())
 	addSquaresValue := addValuesSquares()
-	fmt.Println("values 1 + 2 + 3 + ... + 101", addValue )
+	fmt.Println("values 1 + 2 + 3 + ... + 101", addValue)
 	fmt.Println("return addValue : ", addValue)
 	fmt.Println("return addSquaresValue : ", addSquaresValue)
 	return addValue - addSquaresValue

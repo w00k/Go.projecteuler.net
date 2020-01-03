@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	cons "./utility"
+	"github.com/w00k/Go.projecteuler.net/src/utility"
 )
 
 func main() {
-	fmt.Println(" ===> ", cons.Exc007())
+	fmt.Println(" ===> ", utility.Exc007())
 }
