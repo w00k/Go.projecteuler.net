@@ -1,7 +1,6 @@
 package utility
 
 import (
-	"fmt"
 	"time"
 )
 
