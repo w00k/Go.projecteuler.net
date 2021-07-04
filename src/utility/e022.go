@@ -5,8 +5,12 @@ import (
 	"sort"
 )
 
+//For example, when the list is sorted into alphabetical order,
+//COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th
+//name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
+//What is the total of all the name scores in the file?
 func Exc022() int {
-
+	//the array with all names
 	arrayNames := []string{"MARY", "PATRICIA", "LINDA", "BARBARA", "ELIZABETH", "JENNIFER", "MARIA", "SUSAN", "MARGARET", "DOROTHY",
 		"LISA", "NANCY", "KAREN", "BETTY", "HELEN", "SANDRA", "DONNA", "CAROL", "RUTH", "SHARON",
 		"MICHELLE", "LAURA", "SARAH", "KIMBERLY", "DEBORAH", "JESSICA", "SHIRLEY", "CYNTHIA", "ANGELA", "MELISSA",
@@ -524,22 +528,20 @@ func Exc022() int {
 		"WALLY", "LUIGI", "KENETH", "JACINTO", "GRAIG", "FRANKLYN", "EDMUNDO", "SID", "PORTER", "LEIF",
 		"JERAMY", "BUCK", "WILLIAN", "VINCENZO", "SHON", "LYNWOOD", "JERE", "HAI", "ELDEN", "DORSEY",
 		"DARELL", "BRODERICK", "ALONSO"}
-	//sum the values
+	//sum all values
 	sumValue := 0
 	//sort the array
 	sort.Strings(arrayNames)
 	//the logic
 	for index, name := range arrayNames {
 		sumValue += (name2score(name) * (index + 1))
-		if index+1 == 938 {
-			fmt.Println("index (938) ::: 1 + ", index)
-			fmt.Println("name ::: ", name)
-		}
 	}
 	fmt.Println("the sum of all names are ", sumValue)
 	return 0
 }
 
+//name2score : get the score of any letter
+// in ascii 64 is the @ and is after A (number 65)
 func name2score(name string) int {
 	sum := 0
 	for i := 0; i < len(name); i++ {
